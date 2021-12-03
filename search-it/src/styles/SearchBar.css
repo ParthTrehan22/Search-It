@@ -3,6 +3,7 @@
     height: 45px;
     justify-content: center;
     text-align: center;
+    width:100%;
 }
 .Search-field{
     display: flex;
@@ -41,4 +42,7 @@
     text-decoration: none;
     color: black;
     font-weight: bolder;
+}
+.Card-container{
+    margin-top: 30px; 
 }

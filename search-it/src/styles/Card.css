@@ -1,0 +1,11 @@
+.Card{
+    margin:10px 20px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+.Card img{
+    width: 100%;
+    position: absolute;
+}
