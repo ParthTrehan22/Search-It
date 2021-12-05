@@ -59,8 +59,10 @@
 .image img {
   border-radius: 25px;
   text-align: center;
-  width: 250px;
+  width: 300px;
   margin: 15px;
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 .main {

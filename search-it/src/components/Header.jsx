@@ -16,7 +16,7 @@ const fetchImages = (query, page = 1) =>
       .getPhotos({
         query,
         page,
-        perPage: 10,
+        perPage: 30,
         w: 200,
         fit: "max",
       })
@@ -82,7 +82,7 @@ function Header() {
       if (isBottom && !fetchingRef.current) {
         getUnsplashImages(
           searchRef.current,
-          imagesRef.current.length / 10 + 1
+          imagesRef.current.length / 30 + 1
         ).then((newImages) => {
           imagesRef.current = [...imagesRef.current, ...newImages];
           setImages(imagesRef.current);
