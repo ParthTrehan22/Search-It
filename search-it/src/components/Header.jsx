@@ -6,24 +6,7 @@ import { createApi } from "unsplash-js";
 import { debounce } from "lodash";
 import { BeatLoader } from "react-spinners";
 
-const unsplash = createApi({
-  accessKey: "MZg0kz21lnxkcsvvhr-zOIC_5zJq3RDw59NB0FXrdSc",
-});
-
-const fetchImages = (query, page = 1) =>
-  new Promise((resolve, reject) => {
-    unsplash.search
-      .getPhotos({
-        query,
-        page,
-        perPage: 30,
-        w: 200,
-        fit: "max",
-      })
-      .then((result) => {
-        resolve(result.response.results.map((result) => result.urls.regular));
-      });
-  });
+import fetchImages from "./FetchImages";
 
 function Header() {
   const [search, setSearch] = useState("");
@@ -54,7 +37,7 @@ function Header() {
       return fetchImages(query, page).then((result) => {
         setFetching(false);
         fetchingRef.current = false;
-
+        console.log(result);
         return result;
       });
     },
@@ -102,6 +85,7 @@ function Header() {
       <div className="header">
         <div className="left_header">
           <img
+            data-testid = "logo"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9eF3AdDg-2a3ZuIuD-7voOtscmwtaoViPSA&usqp=CAU"
             alt="logo"
           />
@@ -109,10 +93,11 @@ function Header() {
         </div>
         <div className="right_header">
           <div className="searchIcon">
-            <img src={searchIcon} alt="search_logo" />
+            <img data-testid="searchLogo" src={searchIcon} alt="search_logo" />
           </div>
           <div className="inputBar">
             <input
+              data-testid="input"
               type="search"
               placeholder="Search ..."
               onChange={debouncedChangeHandler}
@@ -125,12 +110,12 @@ function Header() {
           {images.length > 0 &&
             images.map((url) => (
               <div key={url} className="image">
-                <img src={url} alt="image" />
+                <img data-testid="images" src={url} alt="image" />
               </div>
             ))}
         </div>
         <div className="loader">
-          {fetching && <BeatLoader color={"#000000"} />}
+          {fetching && <BeatLoader data-testid="BeatLoader" color={"#000000"} />}
         </div>
       </div>
     </div>
