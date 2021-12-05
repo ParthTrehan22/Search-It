@@ -89,7 +89,7 @@ function Header() {
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9eF3AdDg-2a3ZuIuD-7voOtscmwtaoViPSA&usqp=CAU"
             alt="logo"
           />
-          <h2>Search It!</h2>
+          <p>Search It!</p>
         </div>
         <div className="right_header">
           <div className="searchIcon">

@@ -19,11 +19,43 @@
   margin-right: 10px;
   border-radius: 8px;
 }
-.left_header h2 {
+.left_header p {
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   color: #f8f8fa;
+  font-size: 30px;
+  padding-top: 10px;
 }
+@media (max-width:860px) {
+  .header {
+    display: flex;
+    height: 100px;
+    padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    background-color: black;
+  }
+  .left_header {
+    display: flex;
+    width: 25%;
+    padding: 5px 5px;
+    margin: 0px 15px;
+    align-items: center;
+  }
+  .left_header img {
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 4px;
+  }
+  .left_header p {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    color: #f8f8fa;
+    font-size: 15px;
+    padding-top: 8px;
+  }
+}
+
 .right_header {
   display: flex;
   width: 50%;
