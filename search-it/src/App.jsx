@@ -1,13 +1,22 @@
-import React, { useMemo, useCallback } from "react";
-import searchIcon from "./images/search.png";
-import { useState, useEffect, useRef } from "react";
-import { debounce } from "lodash";
+// Libs
+import React, {
+  useMemo,
+  useCallback,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
+import _debounce from "lodash/debounce";
 import { BeatLoader } from "react-spinners";
-import "./styles/App.css"
 
-import fetchImages from "./services/fetchImages";
+// Services
+import { fetchImages } from "./services/fetchImages";
 
-function Header() {
+// Styles
+import searchIcon from "./images/search.png";
+import "./styles/App.css";
+
+const App = () => {
   const [search, setSearch] = useState("");
   const searchRef = useRef(search);
   const [images, setImages] = useState([]);
@@ -24,7 +33,7 @@ function Header() {
     [setSearch]
   );
 
-  const debouncedChangeHandler = useMemo(() => debounce(handleSearch, 1000), [
+  const debouncedChangeHandler = useMemo(() => _debounce(handleSearch, 300), [
     handleSearch,
   ]);
 
@@ -36,7 +45,6 @@ function Header() {
       return fetchImages(query, page).then((result) => {
         setFetching(false);
         fetchingRef.current = false;
-        console.log(result);
         return result;
       });
     },
@@ -84,7 +92,7 @@ function Header() {
       <div className="header">
         <div className="left_header">
           <img
-            data-testid = "logo"
+            data-testid="logo"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9eF3AdDg-2a3ZuIuD-7voOtscmwtaoViPSA&usqp=CAU"
             alt="logo"
           />
@@ -97,7 +105,6 @@ function Header() {
           <div className="inputBar">
             <input
               data-testid="input"
-              type="search"
               placeholder="Search ..."
               onChange={debouncedChangeHandler}
             />
@@ -109,16 +116,22 @@ function Header() {
           {images.length > 0 &&
             images.map((url) => (
               <div key={url} className="image">
-                <img data-testid="images" src={url} alt="image" />
+                <img data-testid={url} src={url} alt="image" />
               </div>
             ))}
         </div>
         <div className="loader">
-          {fetching && <BeatLoader data-testid="BeatLoader" color={"#000000"} />}
+          {fetching && (
+            <BeatLoader
+              data-testid="BeatLoader"
+              loading={fetching}
+              color={"#000000"}
+            />
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Header;
+export default App;
