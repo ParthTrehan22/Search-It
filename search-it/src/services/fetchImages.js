@@ -19,4 +19,4 @@ const fetchImages = (query, page = 1) =>
       });
   });
 
-export default { fetchImages };
+export { fetchImages };
