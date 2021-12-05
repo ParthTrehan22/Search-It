@@ -8,7 +8,7 @@ A React utility that allows the user to open the website and type a query to fin
 ## Badges
 
 
-[![MIT License](https://img.shields.io/appveyor/tests/ParthTrehan22/Search-It)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![MIT License](https://img.shields.io/github/tests/ParthTrehan22/Search-It)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 ## Run Locally
 
