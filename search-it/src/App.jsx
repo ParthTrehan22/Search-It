@@ -1,12 +1,11 @@
 import React, { useMemo, useCallback } from "react";
-import searchIcon from "../images/search.png";
-import "../styles/Header.css";
+import searchIcon from "./images/search.png";
 import { useState, useEffect, useRef } from "react";
-import { createApi } from "unsplash-js";
 import { debounce } from "lodash";
 import { BeatLoader } from "react-spinners";
+import "./styles/App.css"
 
-import fetchImages from "./FetchImages";
+import fetchImages from "./services/fetchImages";
 
 function Header() {
   const [search, setSearch] = useState("");
