@@ -3,7 +3,7 @@
 
 A React utility that allows the user to open the website and type a query to find images related to the query. Also the user can scroll through the pages without the need of pagination.
  
-#API used
+# API used
 https://unsplash.com/developers
 
 ## Run Locally
