@@ -1,60 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.header{
-    display: flex;
-    height: 100px;
-    padding: 20px 10px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.header {
+  display: flex;
+  height: 100px;
+  padding: 20px 10px;
+  position: sticky;
+  top: 0;
+  background-color: black;
 }
-.left_header{
-    display: flex;
-    width: 25%;
-    padding: 5px 5px;
-    margin: 0px 15px;
-    align-items: center;
+.left_header {
+  display: flex;
+  width: 25%;
+  padding: 5px 5px;
+  margin: 0px 15px;
+  align-items: center;
 }
-.left_header img{
-    height: 50px;
-    margin-right: 10px;
+.left_header img {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 8px;
 }
-.left_header h2{
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
+.left_header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  color: #f8f8fa;
 }
-.right_header{
-    display: flex;
-    width: 50%;
-    align-items: center;
-    border: 1px solid gray;
-    border-radius: 33px;
-    background-color: #f8f8f8;
+.right_header {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 33px;
+  background-color: #f8f8fa;
 }
-.searchIcon img{
-    height: 25px;
-    margin: 0px 20px;
-    
+.searchIcon img {
+  height: 25px;
+  margin: 0px 20px;
 }
-.inputBar{
-    width: 80%;
+.inputBar {
+  width: 80%;
 }
-.inputBar input{
-    background-color: #f8f8f8;
-    width: 100%;
-    border: none;
+.inputBar input {
+  background-color: #f8f8fa;
+  width: 100%;
+  border: none;
 }
-.inputBar input:focus{
-    width: 100%;
-    outline: none;
-    background-color: #f8f8f8;
-}
-
-.imagesContainer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    padding: 15px;
+.inputBar input:focus {
+  width: 100%;
+  outline: none;
+  background-color: #f8f8fa;
 }
 
-.image img{
-    border-radius: 25px;
-    text-align: center;
-    width: 250px;
-    margin: 15px;
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 15px;
+}
+
+.image img {
+  border-radius: 25px;
+  text-align: center;
+  width: 250px;
+  margin: 15px;
+}
+
+.main {
+  height: calc(100% - 100px);
+  background-color: #f8f8fa;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
 }
