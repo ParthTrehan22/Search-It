@@ -48,12 +48,13 @@
 
 .imagesContainer{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     padding: 15px;
 }
 
 .image img{
     border-radius: 25px;
     text-align: center;
-    height: 250px;
+    width: 250px;
+    margin: 15px;
 }
